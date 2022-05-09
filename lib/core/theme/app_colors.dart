@@ -38,4 +38,5 @@ class AppColors {
   static const myOrdersTabBackground = Color(0xffEFEFF4);
   static const lightTestGrey = Color(0xffEBEDF0);
   static const chooseReasonComment = Color(0xffF2F2F2);
+  static const blue = Colors.blue;
 }

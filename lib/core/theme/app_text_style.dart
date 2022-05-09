@@ -10,7 +10,15 @@ class AppTextStyles {
     fontSize: 17,
     fontWeight: FontWeight.w600,
   );
-
+  static const selectedLabelStyle = TextStyle(
+    color: AppColors.blue,
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+  );
+  static const unselectedLabelStyle = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+  );
   static const basketAppBarTitle = TextStyle(
     color: Colors.black,
     fontSize: 28,
@@ -52,8 +60,8 @@ class AppTextStyles {
   );
 
   static const bannerDetailDescription = TextStyle(
-    color: Colors.black12,
-    fontSize: 13,
+    color: Colors.black,
+    fontSize: 14,
     fontWeight: FontWeight.w400,
   );
   static const productDetailTitle = TextStyle(
@@ -330,5 +338,9 @@ class AppTextStyles {
     color: AppColors.white,
     fontSize: 20,
     fontWeight: FontWeight.w700,
+  );
+  static const productprice = TextStyle(
+    color: Colors.blue,
+    fontSize: 17,
   );
 }

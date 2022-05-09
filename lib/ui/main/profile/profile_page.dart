@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/custom_widgets/custom_button/custom_button.dart';
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 10, right: 10),

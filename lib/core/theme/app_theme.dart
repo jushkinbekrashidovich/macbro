@@ -9,22 +9,22 @@ class AppThemes {
 
   static final ThemeData light = ThemeData(
     canvasColor: Colors.transparent,
-    primaryColor: AppColors.assets,
+    primaryColor: AppColors.blue,
     scaffoldBackgroundColor: AppColors.background,
     backgroundColor: AppColors.background,
     cardColor: AppColors.background,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     colorScheme: const ColorScheme(
-      primary: AppColors.assets,
+      primary: AppColors.blue,
       secondary: AppColors.white,
       surface: Colors.transparent,
       background: AppColors.background,
       error: AppColors.red,
-      onPrimary: AppColors.assets,
-      onSecondary: AppColors.assets,
-      onSurface: AppColors.assets,
+      onPrimary: AppColors.blue,
+      onSecondary: AppColors.blue,
+      onSurface: AppColors.blue,
       onBackground: AppColors.background,
-      onError: AppColors.assets,
+      onError: AppColors.blue,
       brightness: Brightness.light,
     ),
     pageTransitionsTheme: const PageTransitionsTheme(

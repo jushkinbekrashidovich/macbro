@@ -12,26 +12,23 @@ class BannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
-      builder: (controller) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 7),
-        child: CarouselSlider.builder(
-          
-          options: CarouselOptions(
-            onPageChanged: (index, reason) =>
-                      controller.setCounter(index),
-            height: 190,
-            autoPlay: true,
-            viewportFraction: 1,
-            autoPlayInterval: const Duration(seconds: 3),
-          ),
-          itemCount: controller.banners.length,
-          itemBuilder: (context, index, realIndex) {
-            var banner = controller.banners[index];
-            return BannerI(
-              banner: banner,
-            );
-          },
+      
+      builder: (controller) => CarouselSlider.builder(
+        options: CarouselOptions(
+          onPageChanged: (index, reason) => controller.setCounter(index),
+          enlargeCenterPage: true,
+          autoPlay: true,
+          //viewportFraction: 2,
+          autoPlayInterval: const Duration(seconds: 3),
         ),
+        itemCount: controller.banners.length,
+        itemBuilder: (context, index, realIndex) {
+          var banner = controller.banners[index];
+          return BannerItems(
+            banner: banner,
+          );
+          
+        },
       ),
     );
   }

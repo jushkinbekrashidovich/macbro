@@ -2,9 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hive/hive.dart';
 import 'package:macbro/base/base_functions.dart';
 import 'package:macbro/core/theme/app_colors.dart';
+import 'package:macbro/core/theme/app_text_style.dart';
 import 'package:macbro/data/models/new/new_response.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:macbro/main.dart';
 
 import '../../../../data/models/category/FeaturedListRespnse.dart';
 
@@ -42,17 +46,29 @@ class ProductItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                      height: 24.h,
-                      width: 24.w,
+                      height: 25,
+                      width: 25,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: const Color.fromRGBO(245, 245, 245, 1)),
-                      child: const Center(
-                        child: Icon(
-                          CupertinoIcons.heart_fill,
-                          size: 15,
-                          color: Colors.grey,
-                        ),
+                      child:  Center(
+                        child: IconButton(
+                          onPressed: (){
+                            Hive.box(FAVORITES_BOX).put(new_product!.id, new_product);
+                            // if(Hive.box(FAVORITES_BOX).containsKey(new_product!.id)){
+                            //   Hive.box(FAVORITES_BOX).delete(new_product!.id);
+                            // }
+                            // else{ 
+                            //   Hive.box(FAVORITES_BOX).put(new_product!.id, new_product);
+
+                            // }
+                          }, 
+                          icon: Icon(
+                            // Hive.box(FAVORITES_BOX).containsKey(new_product!.id)? CupertinoIcons.heart_fill:
+                            CupertinoIcons.heart_fill, color: Colors.grey),
+                          iconSize: 18
+                          ,
+                          ),
                       ),
                     ),
                   ],
@@ -76,7 +92,7 @@ class ProductItem extends StatelessWidget {
           Text(
             BaseFunctions.moneyFormatSymbol(new_product?.cheapestPrice ?? 0),
             textAlign: TextAlign.left,
-            style: const TextStyle(color: Colors.blue, fontSize: 17),
+            style: AppTextStyles.productprice,
           ),
         ],
       ),

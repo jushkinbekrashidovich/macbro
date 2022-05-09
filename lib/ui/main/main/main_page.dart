@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:macbro/controller/main/main_controller.dart';
-import 'package:macbro/ui/main/basket/basket_page.dart';
+import 'package:macbro/core/theme/app_text_style.dart';
 import 'package:macbro/ui/main/favourite/favourite_page.dart';
 import 'package:macbro/ui/main/home/home_page.dart';
+import 'package:macbro/ui/main/orders/orders_page.dart';
 import 'package:macbro/ui/main/profile/profile_page.dart';
 
 class MainPage extends GetView<MainController> {
@@ -20,9 +19,9 @@ class MainPage extends GetView<MainController> {
                 index: controller.bottomMenu.index,
                 children: const [
                   HomePage(),
-                  Basket(),
-                  Favourite(),
-                  Profile(),
+                  OrdersPage(),
+                  FavouritePage(),
+                  ProfilePage(),
                 ],
               ),
               bottomNavigationBar: BottomNavigationBar(
@@ -30,15 +29,8 @@ class MainPage extends GetView<MainController> {
                 currentIndex: controller.bottomMenu.index,
                 type: BottomNavigationBarType.fixed,
                 backgroundColor: Colors.white,
-                selectedLabelStyle: const TextStyle(
-                  color: Colors.blue,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                ),
-                unselectedLabelStyle: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                ),
+                selectedLabelStyle: AppTextStyles.selectedLabelStyle,
+                unselectedLabelStyle: AppTextStyles.unselectedLabelStyle,
                 elevation: 8,
                 items: [
                   _bottomNavigationBarItem(
@@ -47,9 +39,9 @@ class MainPage extends GetView<MainController> {
                     activeIcon: 'home_active',
                   ),
                   _bottomNavigationBarItem(
-                    icon: 'basket',
-                    label: 'Basket',
-                    activeIcon: 'basket_active',
+                    icon: 'order',
+                    label: 'Order',
+                    activeIcon: 'order_active',
                   ),
                   _bottomNavigationBarItem(
                     icon: 'favourite',

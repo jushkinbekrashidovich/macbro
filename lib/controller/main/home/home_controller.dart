@@ -23,7 +23,8 @@ class HomeController extends BaseController
   List<t.Products> _new_products = [];
   int _index = 0;
   final scrollController = ScrollController();
-
+  
+  
    RxInt current = 0.obs;
 
   void setCounter(int index)  {current.value = index;

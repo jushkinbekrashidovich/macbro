@@ -7,9 +7,15 @@ import 'package:macbro/core/constants/constants.dart';
 import 'package:macbro/core/theme/app_theme.dart';
 import 'package:macbro/routes/app_pages.dart';
 import 'package:macbro/routes/app_routes.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+const String FAVORITES_BOX = 'favorites_box';
 
+void main() async{
+  await Hive.initFlutter();
+  await Hive.openBox(FAVORITES_BOX);
+  
   runApp(const MyApp());
 }
 
@@ -19,6 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KeyboardDismisser(
+      
       gestures: const [GestureType.onTap],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
@@ -45,6 +52,7 @@ class MyApp extends StatelessWidget {
 
           ///
           transitionDuration: const Duration(milliseconds: 100),
+          
         ),
       ),
     );

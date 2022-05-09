@@ -17,7 +17,7 @@ class BannerCounter extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 4.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Color.fromARGB(255, 2, 2, 2).withOpacity(
+              color: const Color.fromARGB(255, 2, 2, 2).withOpacity(
                   controller.current.value == entry.key ? 0.9 : 0.1),
             ),
           );

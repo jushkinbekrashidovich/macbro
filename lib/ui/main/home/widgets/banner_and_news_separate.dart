@@ -4,18 +4,15 @@ import '../../../../core/theme/app_text_style.dart';
 
 class SeparateBanner extends StatelessWidget {
   const SeparateBanner({Key? key}) : super(key: key);
-
-
- 
  
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: const EdgeInsets.only(left: 10, right: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Padding(
+        const  Padding(
             padding: EdgeInsets.only(left: 10),
             child: Text(
               'Новый',

@@ -26,6 +26,9 @@ dependencies:
   dio_retry_plus: ^1.0.2
   # retrofit
   retrofit: ^3.0.1+1
+  # hive no sql database
+  hive: ^2.1.0
+  hive_flutter: ^1.1.0
   # chuck
   chuck_interceptor: ^1.0.0
   # platform
@@ -50,6 +53,7 @@ flutter:
 
   assets:
     - assets/svg/
+    - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
